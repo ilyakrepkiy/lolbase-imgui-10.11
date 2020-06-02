@@ -120,7 +120,7 @@ HRESULT WINAPI Hooked_Present(LPDIRECT3DDEVICE9 Device, CONST RECT* pSrcRect, CO
 			if (obj->IsHero())
 			{ 
 				auto color = createRGB(255, 0, 0);
-				Functions.DrawCircle(&obj->GetPos(), obj->GetAttackRange() , &color, 0, 0.0f, 0, 0.5f);
+				Functions.DrawCircle(&obj->GetPos(), obj->GetAttackRange() + obj->GetBoundingRadius() , &color, 0, 0.0f, 0, 0.5f);
 			}
 			obj = holzer.GetNextObject(obj);
 		}
@@ -311,7 +311,7 @@ LRESULT WINAPI WndProc(HWND hwnd, UINT u_msg, WPARAM w_param, LPARAM l_param)
 	switch (u_msg)
 	{
 	case WM_KEYDOWN:
-		if (w_param == VK_END) /* твоя кнопка тут */
+		if (w_param == VK_END) /* ГІГўГ®Гї ГЄГ­Г®ГЇГЄГ  ГІГіГІ */
 			g_menu_opened = !g_menu_opened;
 		break;
 	default:
